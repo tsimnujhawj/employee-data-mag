@@ -1,52 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Employee Data Management</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Sign-Up Today!</title>
 
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="assets/javascript/logic.js"></script>
 </head>
+
 <body>
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-2">
-
-            </div>
-            <div class="col-md-8">
-                
-            </div>
-            <div class="col-md-2">
-                
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
         </div>
-        
+
+        <div class="col-md-8">
+    <!-- Sign-up Form (note the various input "types")-->
+    <form role="form">
+        <div class="form-group">
+            <label for="name-input">Employee Name:</label>
+            <input class="form-control" id="name-input" autocomplete="name" type="text">
+        </div>
+        <div class="form-group">
+            <label for="email-input">Role:</label>
+            <input class="form-control" id="role-input" autocomplete="role" type="text">
+        </div>
+        <div class="form-group">
+            <label for="age-input">Start Date:</label>
+            <input class="form-control" id="startDate-input" autocomplete="start" type="date">
+        </div>
+        <div class="form-group">
+            <label for="comment-input">Months Worked</label>
+            <textarea class="form-control" id="mothWorked-input" autocomplete="Month" rows="date"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment-input">Monthly Rate($)</label>
+            <textarea class="form-control" id="monthRate" autocomplete="rate" type="text"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="comment-input">Total Billed($)</label>
+            <textarea class="form-control" id="totalBilled" autocomplete="bill" rows="text"></textarea>
+        </div>
+        <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+    </form>
     </div>
 
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-2">
-
-            </div>
-            <div class="col-md-8">
-                
-            </div>
-            <div class="col-md-2">
-                <button id="add">Add Data</button>
-            </div>
+        <div class="col-md-2">
         </div>
         
-    </div>
+    </div> 
+</div>
 
-</body>
-</html>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- LINK TO FIREBASE GOES HERE -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    <script scr="assets/javascript/logic.js"></script>
