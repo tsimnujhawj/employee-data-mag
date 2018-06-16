@@ -1,6 +1,5 @@
 $( document ).ready(function() { // jQuery Document Ready Opening
 
-// TODO: add Firebase Config
  // Initialize Firebase
  var config = {
     apiKey: "AIzaSyB4R7R-GLQCkrzLDSv_ihggqF8KLdigkh4",
@@ -29,6 +28,16 @@ $("#add-user").on("click", function (event) {
 
     console.log("name is " + name);
 
+    database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot){
+        $("#name-display").text(snapshot.val().name);
+        $("#role-display").text(snapshot.val().role);
+        $("#startdate-display").text(snapshot.val().startDate);
+        $("#monthsworked-display").text(snapshot.val().monthWorked);
+        $("#onthlyrate-display").text(snapshot.val().monthRate);
+        $("#totalbilled-display").text(snapshot.val().totalBilled);
+    });
+    
+
     database.ref().push({
         name: name,
         role: role,
@@ -37,11 +46,15 @@ $("#add-user").on("click", function (event) {
         monthRate: monthRate,
         totalBilled: totalBilled
     });
-    // YOUR TASK!!!
 
-    // Code in the logic for storing and retrieving the most recent user.
-
-    // Don't forget to provide initial data to your Firebase database.
+    // dataRef.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot){
+    //     $("#name-display").text(snapshot.val().name);
+    //     $("#role-display").text(snapshot.val().role);
+    //     $("#startdate-display").text(snapshot.val().startDate);
+    //     $("#monthsworked-display").text(snapshot.val().monthWorked);
+    //     $("#onthlyrate-display").text(snapshot.val().monthRate);
+    //     $("#totalbilled-display").text(snapshot.val().totalBilled);
+    // });
 
 });
 
